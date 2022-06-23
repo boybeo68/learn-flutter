@@ -2,8 +2,6 @@ dependencies: \
   /Users/admin/Documents/Flutter/flutter_complete_guide/ios/Runner/GeneratedPluginRegistrant.m \
   /Users/admin/Documents/Flutter/flutter_complete_guide/ios/Runner/GeneratedPluginRegistrant.h \
   /Users/admin/Documents/Flutter/flutter_complete_guide/build/ios/Debug-iphonesimulator/Flutter.framework/Modules/module.modulemap \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/usr/include/mach-o/compact_unwind_encoding.modulemap \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator14.5.sdk/usr/include/mach-o/dyld.modulemap \
   /Users/admin/Documents/Flutter/flutter_complete_guide/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterViewController.h \
   /Users/admin/Documents/Flutter/flutter_complete_guide/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterPluginAppLifeCycleDelegate.h \
   /Users/admin/Documents/Flutter/flutter_complete_guide/build/ios/Debug-iphonesimulator/Flutter.framework/Headers/FlutterHeadlessDartRunner.h \

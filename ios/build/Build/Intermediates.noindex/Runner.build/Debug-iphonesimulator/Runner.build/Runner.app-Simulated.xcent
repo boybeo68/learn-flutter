@@ -4,9 +4,5 @@
 <dict>
 	<key>application-identifier</key>
 	<string>ZFJ9G3BYSB.com.example.flutterCompleteGuide</string>
-	<key>keychain-access-groups</key>
-	<array>
-		<string>ZFJ9G3BYSB.com.example.flutterCompleteGuide</string>
-	</array>
 </dict>
 </plist>
