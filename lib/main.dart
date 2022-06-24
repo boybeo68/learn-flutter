@@ -1,86 +1,46 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
-import './result.dart';
-import './quiz.dart';
+import 'package:flutter_complete_guide/textControl.dart';
+import 'package:flutter_complete_guide/textQuote.dart';
+import 'package:quoter/quoter.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(Assignment());
 
-class MyApp extends StatefulWidget {
+class Assignment extends StatefulWidget {
+  final Quoter quoterText;
+  const Assignment({
+    Key? key,
+    this.quoterText = const Quoter(),
+  }) : super(key: key);
+
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<Assignment> createState() => _AssignmentState();
 }
 
-class _MyAppState extends State<MyApp> {
-  int _questionIndex = 0;
-  int _totalScore = 0;
+class _AssignmentState extends State<Assignment> {
+  Quote? _fixText;
 
-  void _answerQuestion(int score) {
-    _totalScore += score;
-    print(_questionIndex);
+  void _onChangeText() {
     setState(() {
-      _questionIndex = (_questionIndex + 1);
+      _fixText = widget.quoterText.getRandomQuote();
     });
   }
 
-  void _onReset() {
-    _totalScore = 0;
-    setState(() {
-      _questionIndex = 0;
-    });
-  }
-
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    const _questions = [
-      {
-        'questionText': 'What\'s your favorite color?',
-        'answers': [
-          {'text': 'Black', 'score': 10},
-          {'text': 'Red', 'score': 5},
-          {'text': 'Green', 'score': 3},
-          {'text': 'White', 'score': 1},
-        ],
-      },
-      {
-        'questionText': 'What\'s your favorite animal?',
-        'answers': [
-          {'text': 'Rabbit', 'score': 3},
-          {'text': 'Snake', 'score': 11},
-          {'text': 'Elephant', 'score': 5},
-          {'text': 'Lion', 'score': 9},
-        ],
-      },
-      {
-        'questionText': 'Who\'s your favorite instructor?',
-        'answers': [
-          {'text': 'Max', 'score': 1},
-          {'text': 'Max', 'score': 1},
-          {'text': 'Max', 'score': 1},
-          {'text': 'Max', 'score': 1},
-        ],
-      },
-    ];
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: Scaffold(
-          appBar: AppBar(
-            title: Text('This is a appbar'),
-          ),
-          body: (_questionIndex < _questions.length)
-              ? Quiz(
-                  questions: _questions,
-                  answerQuestion: _answerQuestion,
-                  questionIndex: _questionIndex,
+        title: 'Assignment session1',
+        theme: ThemeData.dark(),
+        home: Scaffold(
+            appBar: AppBar(
+              title: Text('Đây là appbar'),
+            ),
+            body: Column(
+              children: [
+                TextQuote(quoterText: _fixText),
+                Button(
+                  onChangeText: _onChangeText,
                 )
-              : Result(
-                  score: _totalScore,
-                  onReset: _onReset,
-                )),
-    );
+              ],
+            )));
   }
 }
